@@ -40,14 +40,16 @@
 		pstmt.setString(7, sessionId);
 		pstmt.executeUpdate();
 	}
+	
 	String sessionname = rs.getString("name");
 	session.setAttribute("sessionName", sessionname);
+	
 	if (rs!= null) 
 		rs.close();
 	if (pstmt != null)
 		pstmt.close();
 	if (conn != null) 
 		conn.close();
-
+	
 	response.sendRedirect("boots.jsp");
 %>

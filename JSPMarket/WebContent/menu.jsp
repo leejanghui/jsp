@@ -35,7 +35,7 @@ a { color : 00FFFF; }
 			<%
 				}else{
 			%>
-					<a class="nav-link"><%=session.getAttribute("sessionName")%>님</a>
+					<li style="padding: 7px; color: white"><%=session.getAttribute("sessionName")%>님</li>
 					<a class="nav-link" href="<c:url value='./logout.jsp'/>">로그아웃</a>
 					<a class="nav-link" href="<c:url value='./updatemember.jsp'/>">회원 수정</a>
 			<%

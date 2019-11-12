@@ -34,7 +34,7 @@
 					</div>
 				</div>
 				<div class="form-group row">
-					<label class="col-sm-2">성함</label>
+					<label class="col-sm-2">이름</label>
 					<div class="col-sm-3">
 						<input type="text" id="mambername" name="mambername" class="form-control">
 					</div>
@@ -49,7 +49,7 @@
 				<div class="form-group row">
 					<label class="col-sm-2">생년월일</label>
 					<div class="col-sm-3">
-						<input type="text" id="mamberbirth" name="mamberbirth" class="form-control">
+						<input type="date" id="mamberbirth" name="mamberbirth" class="form-control">
 					</div>
 				</div>
 				<div class="form-group row">
