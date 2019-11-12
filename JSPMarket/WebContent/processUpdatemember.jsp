@@ -5,50 +5,49 @@
 <%@page import = "java.sql.*"%>
 <%@include file = "dbconn.jsp" %>
 <%
-   String filename="";
-   String realFolder = "C:\\JspFileUpload";
-   String encType = "utf-8";
-   int maxSize = 5 * 1024 * 1024;
-   
-   MultipartRequest multi = new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
-   
-   String Id = multi.getParameter("id");
-   String password = multi.getParameter("password");
-   String name = multi.getParameter("name");
-   String gender = multi.getParameter("gender");
-   String birth = multi.getParameter("birth");
-   String mail = multi.getParameter("mail");
-   String phone = multi.getParameter("phone");
-   String address = multi.getParameter("address");
-   String regist_day = multi.getParameter("regist_day");
-   
-   PreparedStatement pstmt = null;
-   ResultSet rs = null;
-   
-   String sql = "select * from member where id=?";
-   pstmt = conn.prepareStatement(sql);
-   pstmt.setString(1, Id);
-   rs = pstmt.executeQuery();
-   
+	String filename="";
+	String realFolder = "C:\\JspFileUpload";
+	String encType = "utf-8";
+	int maxSize = 5 * 1024 * 1024;
+
+	MultipartRequest multi = new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
+
+	String password = multi.getParameter("M_password");
+	String name = multi.getParameter("M_name");
+	String birth = multi.getParameter("M_birth");
+	String mail = multi.getParameter("M_mail");
+	String phone = multi.getParameter("M_phone");
+	String address = multi.getParameter("M_address");
+
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	String sessionId = (String) session.getAttribute("sessionId");
+
+	String sql = "select * from member where id=?";
+	pstmt = conn.prepareStatement(sql);
+	pstmt.setString(1, sessionId);
+	rs = pstmt.executeQuery();
+
 	if(rs.next()) {
-		sql = "UPDATE member SET password=?, name=?, gender=?, birth=?, mail=?, phone=?, address=?, regist_day=? WHERE p_id=?";
-    	pstmt = conn.prepareStatement(sql);
-   		pstmt.setString(1, password);
+		sql = "UPDATE member SET password=?, name=?, birth=?, mail=?, phone=?, address=? WHERE id=?";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, password);
 		pstmt.setString(2, name);
-		pstmt.setString(3, gender);
-    	pstmt.setString(4, birth);
-    	pstmt.setString(5, mail);
-    	pstmt.setString(6, phone);
-    	pstmt.setString(7, address);
-    	pstmt.setString(8, regist_day);
-    	pstmt.executeUpdate();
-   }
-   if (rs!= null) 
-      rs.close();   
-   if (pstmt != null)
-      pstmt.close();
-   if (conn != null) 
-      conn.close();
-   
-   response.sendRedirect("editProduct.jsp?edit=update");
+		pstmt.setString(3, birth);
+		pstmt.setString(4, mail);
+		pstmt.setString(5, phone);
+		pstmt.setString(6, address);
+		pstmt.setString(7, sessionId);
+		pstmt.executeUpdate();
+	}
+	String sessionname = rs.getString("name");
+	session.setAttribute("sessionName", sessionname);
+	if (rs!= null) 
+		rs.close();
+	if (pstmt != null)
+		pstmt.close();
+	if (conn != null) 
+		conn.close();
+
+	response.sendRedirect("boots.jsp");
 %>

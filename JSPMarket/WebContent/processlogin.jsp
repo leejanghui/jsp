@@ -12,21 +12,17 @@
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 
-	String sql = "select * from member where id = ?";
+	String sql = "select * from member where id = ? and password = ?";
 	pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1, M_ID);
+	pstmt.setString(2, password);
 	rs = pstmt.executeQuery();
 	
 	if (rs.next()) {
 		String id = rs.getString("id");
-		if(M_ID != id){
-			System.out.println("pppp");
-		}else{
-			if(password == rs.getString("password")){
-				String name = rs.getString("name");
-				session.setAttribute("sessionId", name);
-			}
-		}
+		String name = rs.getString("name");
+		session.setAttribute("sessionId", id);
+		session.setAttribute("sessionName", name);
 	}
 	if (rs!= null)
 		rs.close();   

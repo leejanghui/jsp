@@ -26,7 +26,7 @@
 		<filter-name>LogFileFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	<!-- <servlet>
+	<servlet>
 		<servlet-name>BoardController</servlet-name>
 		<servlet-class>mvc.controller.BoardController</servlet-class>
 	</servlet>
@@ -34,5 +34,5 @@
 	<servelt-mapping>
 	<servelt-name>BoardController</servelt-name>
 	<url-pattern>*.do</url-pattern>
-	</servelt-mapping> -->
+	</servelt-mapping>
 </web-app>

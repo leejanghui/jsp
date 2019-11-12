@@ -12,7 +12,6 @@
 	</div>
 	<div class="container" align="center">
 		<div class="col-md-4 col-md-offset-4">
-			<h3 class="form-signin-heading">Please sign in</h3>
 			<form class="form-signin" action="./processlogin.jsp" method="post">
 				<div class="form-group">
 					<label>User Name</label>

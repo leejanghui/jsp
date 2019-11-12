@@ -16,6 +16,7 @@ import mvc.model.BoardDAO;
 import mvc.model.BoardDTO;
 
 public class BoardController extends HttpServlet {
+	
 	private static final long seriaVersionUID = 1L;
 	static final int LISTCOUNT = 5;
 	
@@ -35,6 +36,14 @@ public class BoardController extends HttpServlet {
 			requestBoardList(request);
 			RequestDispatcher rd =request.getRequestDispatcher("/Board/list.jsp");
 			rd.forward(request, response); 
+		}else if(command.equals("/BoardWriteForm.do")){
+			requestBoardList(request);
+			RequestDispatcher rd =request.getRequestDispatcher("/Board/writeForm.jsp");
+			rd.forward(request, response);
+		}else if(command.equals("/BoardWriteAction.do")){
+			requestBoardList(request);
+			RequestDispatcher rd =request.getRequestDispatcher("/BoardListAction.do");
+			rd.forward(request, response);
 		}
 	}
 	
