@@ -27,16 +27,16 @@
 	</div>
 	<%@ include file="dbconn.jsp" %>
 		<%
-		String productId = request.getParameter("id");
-
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-
-		String sql = "select * from product where p_id = ?";
-		pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, productId);
-		rs = pstmt.executeQuery();
-		if (rs.next()) {
+			String productId = request.getParameter("id");
+	
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+	
+			String sql = "select * from product where p_id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, productId);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
 		%>
 		<div class="container">
 			<div class="row">

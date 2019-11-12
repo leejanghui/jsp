@@ -27,17 +27,20 @@ a { color : 00FFFF; }
 			<a class="nav-link" href="<c:url value='./BoardListAction.do?pageNum=1'/>">BOARD</a>
 		</div>
 		<div class="nav-itme">
-			<c:choose>
-				<c:when test="${empty sessionId}">
-					<a class="nav-link" href="<c:url value='./member/loginmember.jsp'/>">로그인</a>
+			<%
+				if(session.getAttribute("sessionId") == null) {
+			%>
+					<a class="nav-link" href="<c:url value='./login.jsp'/>">로그인</a>
 					<a class="nav-link" href="<c:url value='./addmember.jsp'/>">회원가입</a>
-				</c:when>
-				<%-- <c:otherwise>
-					<li style="padding: 7px; color: white">[<%=sessionId%>님]</li>
-					<a class="nav-link" href="<c:url value='./member/logoutmember.jsp'/>">로그아웃</a>
-					<a class="nav-link" href="<c:url value='./member/updatemember.jsp'/>">회원 수정</a>
-				</c:otherwise> --%>
-			</c:choose>
+			<%
+				}else{
+			%>
+					<li style="padding: 7px; color: white">[<%=session.getAttribute("sessionId")%>님]</li>
+					<a class="nav-link" href="<c:url value='./logoutmember.jsp'/>">로그아웃</a>
+					<a class="nav-link" href="<c:url value='./updatemember.jsp'/>">회원 수정</a>
+			<%
+				}
+			%>
 		</div>
 	</div>
 </nav>
