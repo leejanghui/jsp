@@ -2,22 +2,23 @@
 <%@ page import="java.sql.*"%>
 <%@ include file="dbconn.jsp"%>
 <%
-	String M_Id = request.getParameter("id");
+	String sessionId = (String) session.getAttribute("sessionId");
 	
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	
-	String sql = "select * member";
+	String sql = "select * from member";
 	pstmt = conn.prepareStatement(sql);
 	rs = pstmt.executeQuery();
 	
 	if (rs.next()){
-		sql = "delete from member where p_id = ?;";
+		sql = "delete from member where id = ?;";
 		pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, M_Id);
+		pstmt.setString(1, sessionId);
 		pstmt.executeUpdate();
-	}else
-		out.println("일치하는 상품이 없습니다.");
+	}
+	
+	session.invalidate();
 	
 	if(rs != null)
 		rs.close();
@@ -26,5 +27,5 @@
 	if(conn != null)
 		conn.close();
 	
-	response.sendRedirect("editProduct.jsp?edit=delete");
+	response.sendRedirect("boots.jsp");
 %>

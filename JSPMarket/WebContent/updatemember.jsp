@@ -67,6 +67,7 @@
 					</div>
 					<button class="btn btn btn-lg btn-success btn-block" type="submit">수정완료</button>
 				</form>
+				<a href="deletemember.jsp" class="btn btn-danger" role="button">삭제 &raquo;</a>
 			</div>
 		</div>
 	</div>
