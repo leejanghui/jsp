@@ -1,28 +1,18 @@
 <%@ page contentType = "text/html; charset=utf-8"%>
 <%@ page import = "com.oreilly.servlet.*"%>
-<%@ page import = "com.oreilly.servlet.multipart.*"%>
 <%@ page import = "java.util.*"%>
 <%@ page import = "java.sql.*"%>
 <%@ include file = "dbconn.jsp" %>
 <%
-	request.setCharacterEncoding("UTF-8");
-
-	String filename="";
-	String realFolder = "C:\\JspFileUpload";
-	String encType = "utf-8";
-	int maxSize = 5 * 1024 * 1024;
-	
-	MultipartRequest multi = new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
-
-	String memberId = multi.getParameter("memberId");
-	String memberpassword = multi.getParameter("memberpassword");
-	String mambername = multi.getParameter("mambername");
-	String membergender = multi.getParameter("membergender");
-	String mamberbirth = multi.getParameter("mamberbirth");
-	String memberemail = multi.getParameter("memberemail");
-	String memberphone = multi.getParameter("memberphone");
-	String memberaddress = multi.getParameter("memberaddress");
-	String memberRegist_day = multi.getParameter("memberRegist_day");
+	String memberId = request.getParameter("memberId");
+	String memberpassword = request.getParameter("memberpassword");
+	String mambername = request.getParameter("mambername");
+	String membergender = request.getParameter("membergender");
+	String mamberbirth = request.getParameter("mamberbirth");
+	String memberemail = request.getParameter("memberemail");
+	String memberphone = request.getParameter("memberphone");
+	String memberaddress = request.getParameter("memberaddress");
+	String memberRegist_day = request.getParameter("memberRegist_day");
 	
 	PreparedStatement pstmt = null;
 

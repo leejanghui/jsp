@@ -1,23 +1,15 @@
 <%@page contentType = "text/html; charset=utf-8"%>
 <%@page import = "com.oreilly.servlet.*"%>
-<%@page import = "com.oreilly.servlet.multipart.*"%>
 <%@page import = "java.util.*"%>
 <%@page import = "java.sql.*"%>
 <%@include file = "dbconn.jsp" %>
 <%
-	String filename="";
-	String realFolder = "C:\\JspFileUpload";
-	String encType = "utf-8";
-	int maxSize = 5 * 1024 * 1024;
-
-	MultipartRequest multi = new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
-
-	String password = multi.getParameter("M_password");
-	String name = multi.getParameter("M_name");
-	String birth = multi.getParameter("M_birth");
-	String mail = multi.getParameter("M_mail");
-	String phone = multi.getParameter("M_phone");
-	String address = multi.getParameter("M_address");
+	String password = request.getParameter("M_password");
+	String name = request.getParameter("M_name");
+	String birth = request.getParameter("M_birth");
+	String mail = request.getParameter("M_mail");
+	String phone = request.getParameter("M_phone");
+	String address = request.getParameter("M_address");
 
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;

@@ -24,6 +24,7 @@
 		session.setAttribute("sessionId", id);
 		session.setAttribute("sessionName", name);
 	}
+	
 	if (rs!= null)
 		rs.close();   
 	if (pstmt != null)
