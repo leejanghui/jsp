@@ -1,6 +1,7 @@
 package mvc.model;
 
 public class BoardDTO {
+	
 	private int num;
 	private String id;
 	private String name;
@@ -9,6 +10,10 @@ public class BoardDTO {
 	private String regist_day;
 	private int hit;
 	private String ip;
+	
+	public BoardDTO() {
+		super();
+	}
 	
 	public int getNum() {
 		return num;
@@ -72,9 +77,5 @@ public class BoardDTO {
 
 	public void setIp(String ip) {
 		this.ip = ip;
-	}
-
-	public BoardDTO() {
-		super();
 	}
 }
