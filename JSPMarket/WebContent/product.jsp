@@ -19,7 +19,7 @@
 </head>
 <body>
 <%
-	String sessionName = (String) session.getAttribute("sessionName");
+	String sessionloginName = (String) session.getAttribute("sessionloginName");
 %>
 	<jsp:include page="menu.jsp" />
 	<div class="jumbotron">
@@ -61,7 +61,7 @@
 					
 					<form name="addForm" action="./addCart.jsp?id=<%=rs.getString("p_id")%>" method="post">
 					<%
-					if(session.getAttribute("sessionName") != null) {
+					if(sessionloginName != null) {
 					%>
 					<a href="#" class="btn btn-info" onclick="addToCart()">상품 주문&raquo;</a>
 					<a href="./cart.jsp" class="btn btn-warning" onclick="addCart">장바구니&raquo;</a>

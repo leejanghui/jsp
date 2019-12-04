@@ -18,10 +18,10 @@
 	rs = pstmt.executeQuery();
 	
 	if (rs.next()) {
-		String id = rs.getString("id");
-		String name = rs.getString("name");
-		session.setAttribute("sessionId", id);
-		session.setAttribute("sessionName", name);
+		String M_id = rs.getString("id");
+		String M_name = rs.getString("name");
+		session.setAttribute("sessionloginId", M_id);
+		session.setAttribute("sessionloginName", M_name);
 	}
 	
 	if (rs!= null)

@@ -2,7 +2,7 @@
 <%@ page import="java.sql.*"%>
 <html>
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css">
 <title>상품 편집</title>
 <script type="text/javascript">
 	function deleteConfirm(id) {
@@ -43,7 +43,7 @@
 				<p><%
 						if(edit.equals("update")){
 					%>
-						<a href="./updateProduct.jsp?id=<%=rs.getString("p_id")%>" class="btn btn-secondary ">수정 &raquo;</a>
+						<a href="./updateProduct.jsp?id=<%=rs.getString("p_id")%>" class="btn btn-info ">수정 &raquo;</a>
 					<%
 						}else if (edit.equals("delete")) {
 					%>

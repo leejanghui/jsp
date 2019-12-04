@@ -13,11 +13,11 @@
 
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
-	String sessionId = (String) session.getAttribute("sessionId");
+	String Id = (String) session.getAttribute("sessionloginId");
 
 	String sql = "select * from member where id=?";
 	pstmt = conn.prepareStatement(sql);
-	pstmt.setString(1, sessionId);
+	pstmt.setString(1, Id);
 	rs = pstmt.executeQuery();
 
 	if(rs.next()) {
@@ -29,12 +29,12 @@
 		pstmt.setString(4, mail);
 		pstmt.setString(5, phone);
 		pstmt.setString(6, address);
-		pstmt.setString(7, sessionId);
+		pstmt.setString(7, Id);
 		pstmt.executeUpdate();
 	}
 	
 	String sessionname = rs.getString("name");
-	session.setAttribute("sessionName", sessionname);
+	session.setAttribute("sessionloginName", sessionname);
 	
 	if (rs!= null) 
 		rs.close();
@@ -43,5 +43,5 @@
 	if (conn != null) 
 		conn.close();
 	
-	response.sendRedirect("boots.jsp");
+	response.sendRedirect("../boots.jsp");
 %>

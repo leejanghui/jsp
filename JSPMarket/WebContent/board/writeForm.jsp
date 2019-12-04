@@ -2,7 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 	String name = (String) request.getAttribute("name");
-	
 %>
 <html>
 <head>
@@ -52,10 +51,9 @@
 				</div>
 			</div>
 			<div class="form-group row">
-				<label class="col-sm-2 control-label" >내용</label>
+				<label class="col-sm-2 control-label">내용</label>
 				<div class="col-sm-8">
-					<textarea name="content" cols="50" rows="5" class="form-control"
-						placeholder="content"></textarea>
+					<textarea name="content" cols="50" rows="5" class="form-control" placeholder="content"></textarea>
 				</div>
 			</div>
 			<div class="form-group row">

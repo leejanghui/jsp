@@ -2,7 +2,7 @@
 <%@ page import="java.sql.*"%>
 <%@ include file="../dbconn.jsp"%>
 <%
-	String sessionId = (String) session.getAttribute("sessionId");
+	String sessionloginId = (String) session.getAttribute("sessionloginId");
 	
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
@@ -14,7 +14,7 @@
 	if (rs.next()){
 		sql = "delete from member where id = ?;";
 		pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, sessionId);
+		pstmt.setString(1, sessionloginId);
 		pstmt.executeUpdate();
 	}
 	
@@ -27,5 +27,5 @@
 	if(conn != null)
 		conn.close();
 	
-	response.sendRedirect("boots.jsp");
+	response.sendRedirect("logout.jsp");
 %>

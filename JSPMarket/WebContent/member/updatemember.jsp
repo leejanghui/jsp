@@ -14,7 +14,7 @@
 	</div>
 	<%@include file="../dbconn.jsp"%>
 	<%
-		String sessionId = (String) session.getAttribute("sessionId");
+		String sessionId = (String) session.getAttribute("sessionloginId");
 	
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;

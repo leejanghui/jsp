@@ -2,17 +2,25 @@
 <%@ page import="java.util.ArrayList"%>
 <jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session"/>
 <head>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css">
 </head>
 <body>
+<%
+	String sessionName = (String) session.getAttribute("sessionloginName");
+%>
 	<jsp:include page="menu.jsp" />
 	<div class="jumbotron">
 		<div class="container">
 			<h1 class="display-3">상품 목록</h1>
 		</div>
 	</div>
-	<p> <a href="./addProduct.jsp" class="btn btn-success"> 상품 등록&raquo;</a>	
+	<%
+		if(session.getAttribute("sessionloginName") != null) {
+	%>
+	<p> <a href="./addProduct.jsp" class="btn btn-success"> 상품 등록&raquo;</a>
+	<%
+		}
+	%>
 	<div class="container">
 		<div class="row" align="center">
 			<%@ include file="dbconn.jsp" %>
