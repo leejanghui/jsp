@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ page import="java.sql.*"%>
-<%@ include file="dbconn.jsp"%>
+<%@ include file="../dbconn.jsp"%>
 <%
 	String sessionId = (String) session.getAttribute("sessionId");
 	

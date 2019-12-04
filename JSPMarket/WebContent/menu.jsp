@@ -14,30 +14,30 @@ a { color : 00FFFF; }
 		<div class="nav-itme">
 			<a class="nav-link" href="./products.jsp">상품목록</a>
 		</div>
-		<div class="nav-itme">
-			<a class="nav-link" href="./addProduct.jsp">상품추가</a>
-		</div>
-		<div class="nav-itme">
-			<a class="nav-link" href="./editProduct.jsp?edit=update">상품수정</a>
-		</div>
-		<div class="nav-itme">
-			<a class="nav-link" href="./editProduct.jsp?edit=delete">상품삭제</a>
-		</div>
-		<div class="nav-itme">
-			<a class="nav-link" href="<c:url value='./BoardListAction.do?pageNum=1'/>">게시판</a>
-		</div>
-		<div class="nav-itme">
 			<%
 				if(session.getAttribute("sessionName") == null) {
 			%>
-					<a class="nav-link" href="<c:url value='./login.jsp'/>">로그인</a>
-					<a class="nav-link" href="<c:url value='./addmember.jsp'/>">회원가입</a>
+					<a class="nav-link" href="<c:url value='./member/login.jsp'/>">로그인</a>
+					<a class="nav-link" href="<c:url value='./member/addmember.jsp'/>">회원가입</a>
 			<%
 				}else{
 			%>
-					<li style="padding: 7px; color: white"><%=session.getAttribute("sessionName")%>님</li>
-					<a class="nav-link" href="<c:url value='./logout.jsp'/>">로그아웃</a>
-					<a class="nav-link" href="<c:url value='./updatemember.jsp'/>">회원 수정</a>
+					<div class="nav-itme">
+						<a class="nav-link" href="./addProduct.jsp">상품추가</a>
+					</div>
+					<div class="nav-itme">
+						<a class="nav-link" href="./editProduct.jsp?edit=update">상품수정</a>
+					</div>
+					<div class="nav-itme">
+						<a class="nav-link" href="./editProduct.jsp?edit=delete">상품삭제</a>
+					</div>
+					<div class="nav-itme">
+						<a class="nav-link" href="<c:url value='./board/BoardListAction.do?pageNum=1'/>">게시판</a>
+					</div>
+					<div class="nav-itme">
+					<li style="padding: 7px; color: white">어서오세요.<%=session.getAttribute("sessionName")%>님</li>
+					<a class="nav-link" href="<c:url value='/member/logout.jsp'/>">로그아웃</a>
+					<a class="nav-link" href="<c:url value='/member/updatemember.jsp'/>">회원 수정</a>
 			<%
 				}
 			%>

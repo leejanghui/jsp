@@ -10,3 +10,11 @@ CREATE table IF NOT EXISTS product(
 	p_fileName VARCHAR(20),
 	PRIMARY KEY (p_id)
 )default CHARSET=utf8;
+
+
+
+
+
+
+DROP table product;
+select * from product;

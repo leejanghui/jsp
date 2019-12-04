@@ -12,3 +12,10 @@ create table member(
 	regist_day varchar(50),
 	primary key(id)
 )default CHARSET=utf8;
+
+
+
+
+
+DROP table member;
+select * from member;

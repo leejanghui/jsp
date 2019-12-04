@@ -2,7 +2,7 @@
 <%@page import="com.oreilly.servlet.*"%>
 <%@page import="java.util.*"%>
 <%@page import="java.sql.*"%>
-<%@include file="dbconn.jsp"%>
+<%@include file="../dbconn.jsp"%>
 <%
 	request.setCharacterEncoding("utf-8");
 	String M_ID = request.getParameter("M_Id");
@@ -31,5 +31,5 @@
 	if (conn != null) 
 		conn.close();
 	
-	response.sendRedirect("boots.jsp");
+	response.sendRedirect("../boots.jsp");
 %>

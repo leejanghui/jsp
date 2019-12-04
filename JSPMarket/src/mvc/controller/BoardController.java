@@ -59,6 +59,7 @@ public class BoardController extends HttpServlet {
 				rd.forward(request, response);				
 		} 
 	}
+	
 	//등록된 글 목록 가져오기	
 	public void requestBoardList(HttpServletRequest request){
 			

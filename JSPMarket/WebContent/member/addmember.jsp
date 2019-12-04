@@ -2,35 +2,28 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <head>
-<script type="text/javascript" src="./resources/js/jquery-3.4.1.js"></script>
-<script type="text/javascript" src="./resources/js/validation.js"></script>
-<link rel="stylesheet" href="./resources/css/bootstrap.min.css">
+<script type="text/javascript" src="../resources/js/jquery-3.4.1.js"></script>
+<link rel="stylesheet" href="../resources/css/bootstrap.min.css">
 <title>상품 등록</title>
 </head>
 <body>
 	<div class="jumbotron">
 		<div class="container">
-			<h1 class="display-3">
-				회원가입
-			</h1>
+			<h1 class="display-3">회원가입</h1>
 		</div>
 	</div>
 	<div class="container">
-		<form name="newMember" action="./processAddmember.jsp"
-				class="form-horizontal" method="post" accept-charset="utf-8"
-				enctype="multipart/form-data">
+		<form name="newMember" action="./processAddmember.jsp" class="form-horizontal" method="post" accept-charset="utf-8" enctype="multipart/form-data">
 				<div class="form-group row">
 					<label class="col-sm-2">아이디</label>
 					<div class="col-sm-3">
-						<input type="text" id="memberId" name="memberId"
-							class="form-control">
+						<input type="text" id="memberId" name="memberId" class="form-control">
 					</div>
 				</div>
 				<div class="form-group row">
 					<label class="col-sm-2">비밀번호</label>
 					<div class="col-sm-3">
-						<input type="text" id="memberpassword" name="memberpassword"
-							class="form-control">
+						<input type="text" id="memberpassword" name="memberpassword" class="form-control">
 					</div>
 				</div>
 				<div class="form-group row">

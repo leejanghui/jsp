@@ -2,17 +2,17 @@
 <%@page import="java.sql.*"%>
 <html>
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="../resources/css/bootstrap.min.css">
 <title>회원 정보 수정</title>
 </head>
 <body>
-	<jsp:include page="menu.jsp" />
+	<jsp:include page="../menu.jsp" />
 	<div class="jumbotron">
 		<div class="container">
 			<h1 class="display-3">회원 정보 수정</h1>
 		</div>
 	</div>
-	<%@include file="dbconn.jsp"%>
+	<%@include file="../dbconn.jsp"%>
 	<%
 		String sessionId = (String) session.getAttribute("sessionId");
 	

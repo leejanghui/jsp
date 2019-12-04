@@ -2,7 +2,7 @@
 <%@page import = "com.oreilly.servlet.*"%>
 <%@page import = "java.util.*"%>
 <%@page import = "java.sql.*"%>
-<%@include file = "dbconn.jsp" %>
+<%@include file = "../dbconn.jsp" %>
 <%
 	String password = request.getParameter("M_password");
 	String name = request.getParameter("M_name");
