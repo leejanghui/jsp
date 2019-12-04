@@ -32,7 +32,7 @@ a { color : 00FFFF; }
 						<a class="nav-link" href="./editProduct.jsp?edit=delete">상품삭제</a>
 					</div>
 					<div class="nav-itme">
-						<a class="nav-link" href="<c:url value='./board/BoardListAction.do?pageNum=1'/>">게시판</a>
+						<li class="nav-item"><a class="nav-link" href="<c:url value="/BoardListAction.do?pageNum=1"/>">게시판</a></li>
 					</div>
 					<div class="nav-itme">
 					<li style="padding: 7px; color: white">어서오세요.<%=session.getAttribute("sessionName")%>님</li>

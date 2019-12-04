@@ -13,7 +13,7 @@
 	</div>
 	<div class="container">
 		<p> <%=request.getRequestURL()%></p>
-		<p> <a href="products.jsp" class="btn btn-secondary"> 상품 목록&raquo</a>
+		<p> <a href="boots.jsp" class="btn btn-secondary"> 홈으로 &raquo</a>
 	</div>
 </body>
 </html>
