@@ -4,18 +4,20 @@
 <%@page import = "java.sql.*"%>
 <%@include file = "../dbconn.jsp" %>
 <%
-	String M_password = request.getParameter("M_password");
-	String M_name = request.getParameter("M_name");
-	String M_birth = request.getParameter("M_birth");
-	String M_mail = request.getParameter("M_mail");
-	String M_phone = request.getParameter("M_phone");
-	String M_address = request.getParameter("M_address");
+	request.setCharacterEncoding("UTF-8");
+	
+	String password = request.getParameter("password");
+	String name = request.getParameter("name");
+	String birth = request.getParameter("birth");
+	String mail = request.getParameter("mail");
+	String phone = request.getParameter("phone");
+	String address = request.getParameter("address");
 
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	String Id = (String) session.getAttribute("sessionloginId");
 
-	String sql = "select * from member where id = ?";
+	String sql = "SELECT * FROM member WHERE id = ?";
 	pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1, Id);
 	rs = pstmt.executeQuery();
@@ -23,12 +25,12 @@
 	if(rs.next()) {
 		sql = "UPDATE member SET password = ?, name = ?, birth = ?, mail = ?, phone = ?, address = ? WHERE id = ?;";
 		pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, M_password);
-		pstmt.setString(2, M_name);
-		pstmt.setString(3, M_birth);
-		pstmt.setString(4, M_mail);
-		pstmt.setString(5, M_phone);
-		pstmt.setString(6, M_address);
+		pstmt.setString(1, password);
+		pstmt.setString(2, name);
+		pstmt.setString(3, birth);
+		pstmt.setString(4, mail);
+		pstmt.setString(5, phone);
+		pstmt.setString(6, address);
 		pstmt.setString(7, Id);
 		pstmt.executeUpdate();
 	}

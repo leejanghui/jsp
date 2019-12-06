@@ -28,41 +28,41 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-7">
-				<form name="updateMember" action="./processUpdatemember.jsp" class="form-horizontal" method="post" enctype="multipart/form-data">
+				<form name="updateMember" action="./processUpdatemember.jsp" class="form-horizontal" method="post">
 					<div class="form-group row">
 						<label class="col-sm-2">비밀번호</label>
 						<div class="col-sm-3">
-							<input type="text" id="M_password" name="M_password" class="form-control" value="<%=rs.getString("password")%>" />
+							<input type="password" id="password" name="password" class="form-control" value='<%=rs.getString("password")%>' />
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-2">이름</label>
 						<div class="col-sm-3">
-							<input type="text" id="M_name" name="M_name" class="form-control" value="<%=rs.getString("name")%>" />
+							<input type="text" id="name" name="name" class="form-control" value='<%=rs.getString("name")%>' />
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-2">생일</label>
 						<div class="col-sm-3">
-							<input type="text" id="M_birth" name="M_birth" class="form-control" value="<%=rs.getString("birth")%>" />
+							<input type="text" id="birth" name="birth" class="form-control" value='<%=rs.getString("birth")%>' />
 						</div>
 					</div>					
 					<div class="form-group row">
 						<label class="col-sm-2">메일</label>
 						<div class="col-sm-3">
-							<input type="text" id="M_mail" name="M_mail" class="form-control" value="<%=rs.getString("mail")%>" />
+							<input type="text" id="mail" name="mail" class="form-control" value='<%=rs.getString("mail")%>' />
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-2">전화번호</label>
 						<div class="col-sm-3">
-							<input type="text" id="M_phone" name="M_phone" class="form-control" value="<%=rs.getString("phone")%>" />
+							<input type="text" id="phone" name="phone" class="form-control" value='<%=rs.getString("phone")%>' />
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-2">주소</label>
 						<div class="col-sm-3">
-							<input type="text" id="M_address" name="M_address" class="form-control" value="<%=rs.getString("address")%>" />
+							<input type="text" id="address" name="address" class="form-control" value='<%=rs.getString("address")%>' />
 						</div>
 					</div>
 					<button class="btn btn btn-lg btn-success btn-block" type="submit">수정완료</button>

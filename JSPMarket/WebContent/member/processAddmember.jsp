@@ -1,38 +1,38 @@
-<%@ page contentType = "text/html; charset=utf-8"%>
-<%@ page import = "com.oreilly.servlet.*"%>
-<%@ page import = "java.util.*"%>
-<%@ page import = "java.sql.*"%>
-<%@ include file = "../dbconn.jsp" %>
+<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page import="java.util.*"%>
+<%@ page import="java.sql.*"%>
+<%@ include file="../dbconn.jsp"%>
 <%
-	String memberId = request.getParameter("memberId");
-	String memberpassword = request.getParameter("memberpassword");
-	String mambername = request.getParameter("mambername");
-	String membergender = request.getParameter("membergender");
-	String mamberbirth = request.getParameter("mamberbirth");
-	String memberemail = request.getParameter("memberemail");
-	String memberphone = request.getParameter("memberphone");
-	String memberaddress = request.getParameter("memberaddress");
-	String memberRegist_day = request.getParameter("memberRegist_day");
+	request.setCharacterEncoding("UTF-8");
+
+	String id = request.getParameter("id");
+	String password = request.getParameter("password");
+	String name = request.getParameter("name");
+	String gender = request.getParameter("gender");
+	String birth = request.getParameter("birth");
+	String mail = request.getParameter("mail");
+	String phone = request.getParameter("phone");
+	String address = request.getParameter("address");
+	String regist_day = request.getParameter("regist_day");
 	
 	PreparedStatement pstmt = null;
-
-	String sql = "INSERT INTO member VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);";
+	
+	String sql = "INSERT INTO member VALUES(?,?,?,?,?,?,?,?,?);";
+	
 	pstmt = conn.prepareStatement(sql);
-	pstmt.setString(1, memberId);
-	pstmt.setString(2, memberpassword);
-	pstmt.setString(3, mambername);
-	pstmt.setString(4, membergender);
-	pstmt.setString(5, mamberbirth);
-	pstmt.setString(6, memberemail);
-	pstmt.setString(7, memberphone);
-	pstmt.setString(8, memberaddress);
-	pstmt.setString(9, memberRegist_day);
+	pstmt.setString(1, id);
+	pstmt.setString(2, password);
+	pstmt.setString(3, name);
+	pstmt.setString(4, gender);
+	pstmt.setString(5, birth);
+	pstmt.setString(6, mail);
+	pstmt.setString(7, phone);
+	pstmt.setString(8, address);
+	pstmt.setString(9, regist_day);
 	pstmt.executeUpdate();
-
+	
 	if (pstmt != null)
 		pstmt.close();
-	if(conn != null)
+	if (conn != null)
 		conn.close();
-	
-	response.sendRedirect("./login.jsp");
 %>

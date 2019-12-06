@@ -32,12 +32,12 @@ a { color : 00FFFF; }
 						<a class="nav-link" href="./editProduct.jsp?edit=delete">상품삭제</a>
 					</div>
 					<div class="nav-itme">
-						<li class="nav-item"><a class="nav-link" href="<c:url value="/BoardListAction.do?pageNum=1"/>">게시판</a></li>
+						<li class="nav-item"><a class="nav-link" href="<c:url value="./BoardListAction.do?pageNum=1"/>">게시판</a></li>
 					</div>
 					<div class="nav-itme">
 						<li style="padding: 7px; color: white">어서오세요.<%=sessionloginName%>님</li>
 					<a class="nav-link" href="<c:url value='/member/logout.jsp'/>">로그아웃</a>
-					<a class="nav-link" href="<c:url value='/member/UpdateMember.jsp'/>">회원 수정</a>
+					<a class="nav-link" href="<c:url value='./member/UpdateMember.jsp'/>">회원 수정</a>
 			<%
 				}
 			%>
