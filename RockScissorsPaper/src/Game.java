@@ -28,8 +28,11 @@ public class Game {
 		System.out.println("바위는 0 가위는 1 보는 2입니다.");
 
 		for (int Score = 0; Score <= 3; Score++) {
+			
 			GamePlaying++;
+			
 			System.out.print("가위 바위 보 중에 무엇을 낼지 결정해주세요 : ");
+			
 			int Insert = scanner.nextInt();
 
 			int RandomRockScissorsPaper = random.nextInt(3);
@@ -117,13 +120,16 @@ public class Game {
 				break;
 			}
 		}
+		scanner.close();
 		
 		int MissingGame = GamePlaying - (Lose + Win + Drow);//무효화 된 게임수 계산
-		double WinningRate = (double)Win / (GamePlaying - MissingGame) * 100;//승률 계산
-		System.out.println( User + "님의 전적은 " + GamePlaying + "전" + Win + "승" + Lose + "패" + Drow + "무 입니다.");//무효화 되지 않은 게임의 전적 출력
-		System.out.println( User + "님의 승률은" + WinningRate + "% 입니다.");//승률 출력
-		System.out.println( "총 무효화 된 게임 횟수는" + MissingGame + "입니다.");//무효화 된 게임의 수
-		System.out.println("3번의 게임을 모두 승리하셨습니다." + User + "님 축하드립니다.");
+		GamePlaying = GamePlaying - MissingGame;
+		double WinningRate = (double)Win / GamePlaying * 100;//승률 계산
+		
+		System.out.println(GamePlaying + "판 중 3번의 게임을 모두 승리하셨습니다." + User + "님 축하드립니다.");
+		System.out.println(User + "님의 전적은 " + GamePlaying + "전" + Win + "승" + Lose + "패" + Drow + "무 입니다.");//무효화 되지 않은 게임의 전적 출력
+		System.out.println(User + "님의 승률은" + WinningRate + "% 입니다.");//승률 출력
+		System.out.println("총 무효화 된 게임 횟수는" + MissingGame + "입니다.");//무효화 된 게임의 수
 		System.out.print("게임을 종료합니다.");
 	}
 }
