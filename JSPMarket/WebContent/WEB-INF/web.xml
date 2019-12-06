@@ -3,23 +3,23 @@
 	<error-page>
 		<error-code>404</error-code>
 		<location>/exceptionNoPage.jsp</location>
-	</error-page>
+	</error-page>	
 	
 	<filter>
 		<filter-name>LogFilter</filter-name>
-		<filter-class>filter.LogFilter</filter-class>
+		<filter-class>filter.LogFilter</filter-class>     
 	</filter>
 	<filter-mapping>
 		<filter-name>LogFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+	</filter-mapping>	
 	
 	<filter>
 		<filter-name>LogFileFilter</filter-name>
 		<filter-class>filter.LogFileFilter</filter-class>
 		<init-param>
 			<param-name>filename</param-name>
-			<param-value>c:\\logs\\JSP.log</param-value>
+			<param-value>c:\\logs\\webmarket.log</param-value>
 		</init-param>
 	</filter>
 	<filter-mapping>
@@ -31,9 +31,9 @@
 		<servlet-name>BoardController</servlet-name>
 		<servlet-class>mvc.controller.BoardController</servlet-class>
 	</servlet>
-	
-	<servelt-mapping>
-	<servelt-name>BoardController</servelt-name>
-	<url-pattern>*.do</url-pattern>
-	</servelt-mapping>
+
+	<servlet-mapping>
+		<servlet-name>BoardController</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
 </web-app>

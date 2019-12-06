@@ -6,7 +6,7 @@
 <style>
 a { color : 00FFFF; }
 </style>
-<nav class="navbar navber-expand navbar-blue bg-dark">
+<nav class="navbar navbar-expand  navbar-dark bg-dark">
 	<div class="container">
 		<div class="nav-itme">
 			<a class="nav-link" href="./boots.jsp">홈</a>
@@ -37,10 +37,9 @@ a { color : 00FFFF; }
 					<div class="nav-itme">
 						<li style="padding: 7px; color: white">어서오세요.<%=sessionloginName%>님</li>
 					<a class="nav-link" href="<c:url value='/member/logout.jsp'/>">로그아웃</a>
-					<a class="nav-link" href="<c:url value='/member/updatemember.jsp'/>">회원 수정</a>
+					<a class="nav-link" href="<c:url value='/member/UpdateMember.jsp'/>">회원 수정</a>
 			<%
 				}
 			%>
 		</div>
-	</div>
 </nav>

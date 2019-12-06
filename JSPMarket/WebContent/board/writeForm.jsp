@@ -33,8 +33,11 @@
 	</div>
 
 	<div class="container">
-		<form name="newWrite" action="./BoardWriteAction.do" class="form-horizontal" method="post" onsubmit="return checkForm()">
-			<input name="id" type="hidden" class="form-control" value="${sessionId}">
+
+		<form name="newWrite" action="./BoardWriteAction.do"
+			class="form-horizontal" method="post" onsubmit="return checkForm()">
+			<input name="id" type="hidden" class="form-control"
+				value="${sessionId}">
 			<div class="form-group row">
 				<label class="col-sm-2 control-label" >성명</label>
 				<div class="col-sm-3">
@@ -51,20 +54,20 @@
 				</div>
 			</div>
 			<div class="form-group row">
-				<label class="col-sm-2 control-label">내용</label>
+				<label class="col-sm-2 control-label" >내용</label>
 				<div class="col-sm-8">
-					<textarea name="content" cols="50" rows="5" class="form-control" placeholder="content"></textarea>
+					<textarea name="content" cols="50" rows="5" class="form-control"
+						placeholder="content"></textarea>
 				</div>
 			</div>
 			<div class="form-group row">
 				<div class="col-sm-offset-2 col-sm-10 ">
-					<input type="submit" class="btn btn-primary " value="등록 ">				
-					<input type="reset" class="btn btn-primary " value="취소 ">
+				 <input type="submit" class="btn btn-primary " value="등록 ">				
+					 <input type="reset" class="btn btn-primary " value="취소 ">
 				</div>
 			</div>
 		</form>
 		<hr>
 	</div>
-	<jsp:include page="../footer.jsp" />
 </body>
 </html>

@@ -6,7 +6,7 @@
 <%
 	request.setCharacterEncoding("utf-8");
 	String M_ID = request.getParameter("M_Id");
-	String password = request.getParameter("password");
+	String M_password = request.getParameter("password");
 
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
@@ -14,7 +14,7 @@
 	String sql = "select * from member where id = ? and password = ?";
 	pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1, M_ID);
-	pstmt.setString(2, password);
+	pstmt.setString(2, M_password);
 	rs = pstmt.executeQuery();
 	
 	if (rs.next()) {

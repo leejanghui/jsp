@@ -11,17 +11,8 @@
 %>
 <html>
 <head>
-<link rel="stylesheet" href="../resources/css/bootstrap.min.css" />
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
 <title>Board</title>
-<script type="text/javascript">
-	function checkForm() {	
-		if (${sessionId==null}) {
-			alert("로그인 해주세요.");
-			return false;
-		}
-		location.href = "./BoardWriteForm.do?id=<%=sessionId%>"
-	}
-</script>
 </head>
 <body>
 	<jsp:include page="../menu.jsp" />
@@ -64,6 +55,7 @@
 			</div>
 			<div align="center">
 				<c:set var="pageNum" value="<%=pageNum%>" />
+				<!-- c:set변수 선언 -->
 				<c:forEach var="i" begin="1" end="<%=total_page%>">
 					<a href="<c:url value="./BoardListAction.do?pageNum=${i}" /> ">
 						<c:choose>

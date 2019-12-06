@@ -1,6 +1,8 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <%@ page import="mvc.model.BoardDTO"%>
+
 <%
 	BoardDTO notice = (BoardDTO) request.getAttribute("board");
 	int num = ((Integer) request.getAttribute("num")).intValue();
@@ -8,7 +10,7 @@
 %>
 <html>
 <head>
-<link rel="stylesheet" href="../resources/css/bootstrap.min.css" />
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
 <title>Board</title>
 </head>
 <body>
@@ -20,9 +22,7 @@
 	</div>
 
 	<div class="container">
-		<form name="newUpdate"
-			action="BoardUpdateAction.do?num=<%=notice.getNum()%>&pageNum=<%=nowpage%>"
-			class="form-horizontal" method="post">
+		<form name="newUpdate"action="BoardUpdateAction.do?num=<%=notice.getNum()%>&pageNum=<%=nowpage%>"class="form-horizontal" method="post">
 			<div class="form-group row">
 				<label class="col-sm-2 control-label" >성명</label>
 				<div class="col-sm-3">

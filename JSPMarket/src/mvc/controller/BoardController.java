@@ -81,7 +81,7 @@ public class BoardController extends HttpServlet {
 		
 		if (total_record % limit == 0){     
 	     	total_page =total_record/limit;
-	     	Math.floor(total_page);  
+	     	Math.floor(total_page);  // 주어진 숫자와 같거나 작은 정수 중에서 가장 큰 수를 반환한다.
 		}
 		else{
 		   total_page =total_record/limit;
